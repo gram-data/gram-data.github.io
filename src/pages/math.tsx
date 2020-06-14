@@ -34,23 +34,23 @@ const MathPage = () => (
         <th>Gram Notation</th>
         <td><TeX>[ ] </TeX></td>
         <td><TeX>(n)</TeX></td>
-        <td><TeX>(n)-[e]-(n')</TeX></td>
+        <td><TeX>{`(n)\\text{--}[e]\\text{--}(n')`}</TeX></td>
         <td><TeX>{`[p] \\\\
         [p (n)]\\\\
         [p ()-[e]-()]`}</TeX></td>
       </tr>
       <tr>
         <th>Relation Operators <br/>
-        <TeX>{`\\sim = \\lbrace \\leftarrow, \\rightarrow, ––, \\huge{,}\\normalsize\\rbrace `}</TeX></th>
+        <TeX>{`\\sim = \\lbrace \\leftarrow, \\rightarrow, \\text{---}, \\huge{,}\\normalsize\\rbrace `}</TeX></th>
         <td></td>
         <td></td>
         <td><TeX>{`\\text{\\footnotesize{\\textquotedblleft left\\textquotedblright}} \\leftarrow \\\\
         \\text{\\footnotesize{\\textquotedblleft right\\textquotedblright}} \\rightarrow \\\\
-        \\text{\\footnotesize{\\textquotedblleft either\\textquotedblright}} ––
+        \\text{\\footnotesize{\\textquotedblleft either\\textquotedblright}} \\text{---}
         `}</TeX></td>
         <td><TeX>{`\\text{\\footnotesize{\\textquotedblleft left\\textquotedblright}} \\leftarrow \\\\
         \\text{\\footnotesize{\\textquotedblleft right\\textquotedblright}} \\rightarrow \\\\
-        \\text{\\footnotesize{\\textquotedblleft either\\textquotedblright}} –– \\\\
+        \\text{\\footnotesize{\\textquotedblleft either\\textquotedblright}} \\text{---} \\\\
         \\text{\\footnotesize{\\textquotedblleft pair\\textquotedblright}} \\huge{,}\\normalsize
         `}</TeX></td>
       </tr>
