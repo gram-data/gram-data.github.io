@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
@@ -51,7 +52,7 @@ const Layout = ({ children }) => {
         }}>
         <Flex 
           sx={{position:'fixed', top:0, left: 0, width:'10em', height:'100vh', flexDirection:'column'}}>
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header siteTitle={data.site.siteMetadata.title} siteDescription={data.site.siteMetadata.description}/>
           <Box 
             sx={{flex:'1 1 auto'}} >
             <Navigation />

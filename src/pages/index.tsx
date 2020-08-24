@@ -28,12 +28,17 @@ const IndexPage = () => (
     <p>Graph theory was invented 
       to <Link href="https://en.wikipedia.org/wiki/Seven_Bridges_of_Königsberg">find a path</Link> yet
       dwells on the pieces of the puzzle rather than the resulting picture.</p>
+    <p>Until graphs became databases, Paths didn't really need to be concrete. Thinking about graphs as
+      an information architecture . Graph theory provides language and thinking to discuss features of a 
+      graph. 
+    </p>
 
     <Styled.h3>Path Information - Route 66</Styled.h3>
     <p>Head west from St.Louis in the USA and you may be traveling along historic Route 66. Nodes
     and Edges could be the towns and roads along the way. Where does
     information about Route 66 itself go? 
     </p>
+    <p>This is the canonical use case of a Path as information structure.</p>
 
     <Styled.h3>Decorated Graphs - D3 DG</Styled.h3>
     <p>D3.js has a lovely force-based network layout. Like many other libraries, the
@@ -41,7 +46,7 @@ const IndexPage = () => (
       position and styling without compromising the domain data in the graph?
     </p>
     <p>Paths could achieve that by following an architectural pattern called an Entity-component-system (ECS),
-      often used in game development. Just wrap each Node (the entity) in a Path (the system) to provide
+      a gift from the world of game development. Just wrap each Node (the entity) in a Path (the system) to provide
       system-specific information (the component).
     </p>
 

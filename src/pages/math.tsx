@@ -12,11 +12,11 @@ const MathPage = () => (
   <Layout>
     <SEO title="Graph Path Math" />
     <Styled.h1>Graph Path Math</Styled.h1>
-    <p>Gram structures data as <a href="https://neo4j.com/developer/graph-database/">property graph</a> paths.
-    What are the formal semantics of composing a graph? Let's start with the types of the things...
+    <p>Everything is a Path. Structure builds up by composing empty Paths 
+      into non-empty Paths. 
     </p>
     <Styled.h2>Type Definitions</Styled.h2>
-    <p>The notation here borrows from Purescript.</p>
+    <p>(The notation here borrows from Purescript.)</p>
     <Styled.h3>Paths</Styled.h3>
     <p>Paths are either empty or the composition of two paths.</p>
     <dl>
@@ -39,18 +39,19 @@ const MathPage = () => (
 
     <Styled.h3>Path sequence</Styled.h3>
     <p>A PathSequence is a Path-like lazy composition of Paths represented as a list.
-      The list elements should be composed pairwise to produce the final Path representation.
+      The list elements are composed pairwise to produce the final Path representation.
       The order of pairing is left-to-right. 
     </p>
     <dl>
       <dt><Styled.code>type PathSequence = List Path</Styled.code></dt>
+      <dd><Styled.code>foldPath :: PathSequence --&gt; Path</Styled.code></dd>
     </dl>
 
     <Styled.h3>Graphs</Styled.h3>
     <p>The classic graph <Styled.code>𝔾 = (𝕍, 𝔼)</Styled.code> is derived from Paths.
     Both nodes and edges may occur multiple times within a path. The order of appearance
-    within a PathSequence and then individual paths represents a sort of additive history
-    for the graph elements. Record values and labels are merged forward 
+    within a Path represents a sort of additive history for the graph elements. 
+    Record values and labels are merged forward.
     </p>
     <dl>
       <dt><Styled.code>type NodeSet = List Node</Styled.code></dt>
@@ -66,82 +67,64 @@ const MathPage = () => (
 
     
   
-    <Styled.h2>Path Elements</Styled.h2>
+    <Styled.h2>Path Notation</Styled.h2>
+    <p>Gram uses two complementary notations for paths:</p>
+    <ol>
+      <li>Cypher path: alternating nodes and edges</li>
+      <li>Path composition: two paths composed into a new path</li>
+    </ol>
+    <p>Both notations use the following relations:</p>
+    <ul>
+      <li><Styled.code>{`<--`}</Styled.code> oriented to the left</li>
+      <li><Styled.code>{`-->`}</Styled.code> oriented to the right</li>
+      <li><Styled.code>——</Styled.code> oriented in either direction</li>
+      <li><TeX>{`\\large{,}`}</TeX> pairwise association</li>
+    </ul>
     <Styled.table>
       <tbody>
         <Styled.tr>
           <th></th><Styled.th>Empty</Styled.th><Styled.th>Node</Styled.th><Styled.th>Edge</Styled.th><Styled.th>Path</Styled.th>
         </Styled.tr>
         <Styled.tr>
-          <Styled.th><TeX>𝕌 = \lbrace n, e, p \rbrace</TeX></Styled.th>
-          <Styled.td><TeX>\empty </TeX></Styled.td>
-          <Styled.td><TeX>n \isin ℕ</TeX></Styled.td>
-          <Styled.td><TeX>e \isin 𝔼</TeX></Styled.td>
-          <Styled.td><TeX>p \isin ℙ</TeX></Styled.td>
+          <Styled.th>Cypher path</Styled.th>
+          <Styled.td><TeX> </TeX></Styled.td>
+          <Styled.td><Styled.code>(n)</Styled.code></Styled.td>
+          <Styled.td><Styled.code>(n1)-[e]-&gt;(n2)</Styled.code></Styled.td>
+          <Styled.td><Styled.code>{`p = ()-->(),()<--()`}</Styled.code></Styled.td>
         </Styled.tr>
         <Styled.tr>
-          <Styled.th>Path Notation</Styled.th>
-          <Styled.td><TeX>[ ] \equiv \empty </TeX></Styled.td>
-          <Styled.td><TeX>[n]</TeX></Styled.td>
-          <Styled.td><TeX>[e] \equiv [e [n,n']]</TeX></Styled.td>
-          <Styled.td><TeX>[p] \equiv [p  [ 𝕌 ] ] \equiv [p [𝕌, 𝕌']]</TeX></Styled.td>
-        </Styled.tr>
-        <Styled.tr>
-          <Styled.th>Gram Notation</Styled.th>
-          <Styled.td><TeX>[ ] </TeX></Styled.td>
-          <Styled.td><TeX>(n)</TeX></Styled.td>
-          <Styled.td><TeX>{`(n)\\text{--}[e]\\text{--}(n')`}</TeX></Styled.td>
-          <Styled.td><TeX>{`[p] \\\\
-          [p (n)]\\\\
-          [p ()-[e]-()]`}</TeX></Styled.td>
-        </Styled.tr>
-        <Styled.tr>
-          <Styled.th>Relation Operators <br/>
-          <TeX>{`\\sim = \\lbrace \\leftarrow, \\rightarrow, \\text{---}, \\huge{,}\\normalsize\\rbrace `}</TeX></Styled.th>
-          <Styled.td></Styled.td>
-          <Styled.td></Styled.td>
-          <Styled.td><TeX>{`\\text{\\footnotesize{\\textquotedblleft left\\textquotedblright}} \\leftarrow \\\\
-          \\text{\\footnotesize{\\textquotedblleft right\\textquotedblright}} \\rightarrow \\\\
-          \\text{\\footnotesize{\\textquotedblleft either\\textquotedblright}} \\text{---}
-          `}</TeX></Styled.td>
-          <Styled.td><TeX>{`\\text{\\footnotesize{\\textquotedblleft left\\textquotedblright}} \\leftarrow \\\\
-          \\text{\\footnotesize{\\textquotedblleft right\\textquotedblright}} \\rightarrow \\\\
-          \\text{\\footnotesize{\\textquotedblleft either\\textquotedblright}} \\text{---} \\\\
-          \\text{\\footnotesize{\\textquotedblleft pair\\textquotedblright}} \\huge{,}\\normalsize
-          `}</TeX></Styled.td>
+          <Styled.th>Path composition</Styled.th>
+          <Styled.td><Styled.code>ø&nbsp;=&nbsp;[&nbsp;]</Styled.code></Styled.td>
+          <Styled.td><Styled.code>{`[n ø ø]`}</Styled.code></Styled.td>
+          <Styled.td><Styled.code>{`[e --> n1 n2]`}</Styled.code></Styled.td>
+          <Styled.td><Styled.code>{`[p , p1 p2]`}</Styled.code></Styled.td>
         </Styled.tr>
       </tbody>
     </Styled.table>
 
-    <Styled.h2>Path Composition</Styled.h2>
-    <table>
+    <p>Cypher path notation is easier to read.
+      Path composition is harder to read. 
+      The notation can be mixed to annotate information about a cypher path.
+      These three notations are equivalent:
+    </p>
+    <Styled.table>
       <tbody>
-        <tr>
-          <td></td><Styled.th>Empty</Styled.th><Styled.th>Node</Styled.th><Styled.th>Edge</Styled.th><Styled.th>Path</Styled.th>
-        </tr>
-        <tr>
-          <Styled.th>Empty</Styled.th>
-          <Styled.td><TeX>\empty \sim \empty \equiv \empty</TeX></Styled.td>
-          <Styled.td><TeX>\empty \sim [n] \equiv [n]</TeX></Styled.td>
-          <Styled.td><TeX>\empty \sim [e] \equiv [e]</TeX></Styled.td>
-          <Styled.td><TeX>\empty \sim [p] \equiv [p]</TeX></Styled.td>
-        </tr>
-        <tr>
-          <Styled.th>Node</Styled.th>
-          <Styled.td><TeX>[n] \sim \empty \equiv [n]</TeX></Styled.td>
-          <Styled.td><TeX>[n] \sim [n] \equiv [e]</TeX></Styled.td>
-          <Styled.td><TeX>[n] \sim [e] \equiv [p]</TeX></Styled.td>
-          <Styled.td><TeX>[n] \sim [p] \equiv [p']</TeX></Styled.td>
-        </tr>
-        <tr>
-          <Styled.th>Edge</Styled.th>
-          <Styled.td><TeX>[e] \sim \empty \equiv [e]</TeX></Styled.td>
-          <Styled.td><TeX>[e] \sim [n] \equiv [p]</TeX></Styled.td>
-          <Styled.td><TeX>[e] \sim [e] \equiv [e]</TeX></Styled.td>
-          <Styled.td><TeX>[e] \sim [p] \equiv [p]</TeX></Styled.td>
-        </tr>
+        <Styled.tr>
+          <Styled.th>Cypher path</Styled.th>
+          <Styled.td><Styled.code>{`p = (n1)-[e1]->(n2)<-[e2]-(n3)`}</Styled.code></Styled.td>
+        </Styled.tr>
+
+        <Styled.tr>
+          <Styled.th>Path composition</Styled.th>
+          <Styled.td><Styled.code>{`[p [e1 --> n1 [e2 <-- n2 n3] ] ]`}</Styled.code></Styled.td>
+        </Styled.tr>
+
+        <Styled.tr>
+          <Styled.th>Mixed notation</Styled.th>
+          <Styled.td><Styled.code>{`[p (n1)-[e1]->(n2)<-[e2]-(n3)]`}</Styled.code></Styled.td>
+        </Styled.tr>
       </tbody>
-    </table>
+    </Styled.table>
 
   </Layout>
 )

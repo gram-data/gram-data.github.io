@@ -3,7 +3,12 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Text, Box, Heading } from "theme-ui"
 
-const Header = ({ siteTitle }) => (
+export type HeaderProps = {
+  siteTitle: string,
+  siteDescription: string
+}
+
+const Header:React.FC<HeaderProps> = ({ siteTitle, siteDescription }) => (
 
   <Box p={3} m={2} 
     color="text" bg="primary" 
@@ -29,18 +34,11 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-        <Text sx={{fontSize:1}}>The Path is the Way</Text>
+        <Text sx={{fontSize:1}}>{siteDescription}</Text>
       </Heading>
     </div>
   </Box>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
