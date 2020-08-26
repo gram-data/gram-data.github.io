@@ -38,8 +38,8 @@ const MathPage = () => (
     </dl>
 
     <Styled.h3>Path sequence</Styled.h3>
-    <p>A PathSequence is a Path-like lazy composition of Paths represented as a list.
-      The list elements are composed pairwise to produce the final Path representation.
+    <p>A PathSequence is an ordered, lazy composition of Paths.
+      The elements are composed pairwise to produce the final Path representation.
       The order of pairing is left-to-right. 
     </p>
     <dl>

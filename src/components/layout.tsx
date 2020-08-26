@@ -11,23 +11,11 @@ import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import Navigation from "./navigation"
-import Footer from "./footer"
-import { Flex, Box } from "theme-ui"
+import Sidebar from "./sidebar"
+import { Box } from "theme-ui"
 // require(`katex/dist/katex.min.css`)
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          description
-        }
-      }
-    }
-  `)
 
   return (
     <Fragment>
@@ -50,15 +38,7 @@ const Layout = ({ children }) => {
         sx={{
           minHeight: '100vh',
         }}>
-        <Flex 
-          sx={{position:'fixed', top:0, left: 0, width:'10em', height:'100vh', flexDirection:'column'}}>
-          <Header siteTitle={data.site.siteMetadata.title} siteDescription={data.site.siteMetadata.description}/>
-          <Box 
-            sx={{flex:'1 1 auto'}} >
-            <Navigation />
-          </Box>
-          <Footer />
-        </Flex>
+        <Sidebar />
         <Box p={4} sx={{
           maxWidth: 'container',
           mx: 'auto'
