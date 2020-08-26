@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { Link } from "theme-ui"
 import PropTypes from "prop-types"
 import React from "react"
 import { Text, Box, Heading } from "theme-ui"
@@ -11,7 +11,7 @@ export type HeaderProps = {
 const Header:React.FC<HeaderProps> = ({ siteTitle, siteDescription }) => (
 
   <Box p={3} m={2} 
-    color="text" bg="primary" 
+    color="text" bg="primaryLight" 
     sx={{
       border: "2px solid black",
       borderRadius: "sketchy3",
@@ -28,13 +28,13 @@ const Header:React.FC<HeaderProps> = ({ siteTitle, siteDescription }) => (
       <Heading>
         <Link
           to="/"
-          style={{
+          sx={{
             textDecoration: `none`,
           }}
         >
           {siteTitle}
         </Link>
-        <Text sx={{fontSize:1}}>{siteDescription}</Text>
+        {/* <Text sx={{fontSize:1}}>{siteDescription}</Text> */}
       </Heading>
     </div>
   </Box>

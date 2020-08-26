@@ -4,6 +4,16 @@ import sketchy from "theme-ui-sketchy-preset"
 export default {
   // ...baseTheme,
   ...sketchy,
+  colors: {
+    ...sketchy.colors,
+    primary: "#098f44",
+    primaryDark: "#205d3b",
+    primaryLight: "#d0EEdd",
+  },
+  borders: {
+    thick: "2px solid var(--theme-ui-colors-greenDark, #336655)",
+    thin: "1px solid var(--theme-ui-colors-greenDark, #336655)"
+  },
   fonts: {
     ...sketchy.fonts,
     monospace: "'Fira Code', monospace",
