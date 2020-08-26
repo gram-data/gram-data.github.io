@@ -52,8 +52,15 @@ const IndexPage = () => (
 
     <Styled.h3>Shared Content</Styled.h3>
     <p>A delivery truck driver steers a truck which physically contains packages that are owned (though not yet possed)
-      by other people. A graph can happily model all the
+      by other people. 
     </p>
+    <p>A graph model can happily express all the relationships, smoothly answering questions like, 
+      "where's my stuff?" but requires external knowledge to "get all the stuff" inside the truck without also getting
+      the driver by accident. 
+    </p>
+    <p>A document model can provide explicit containers for getting stuff in the truck, but optimizes for either 
+      truck-oriented or owner oriented queries.</p>
+    <p>A path model can do both explicitly in the data, without needing a schema or a written guidebook. </p>
 
     <Styled.h2>2. From nodes and edges, to paths</Styled.h2>
     <p>Gram structures data as property graph paths.
