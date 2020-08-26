@@ -25,12 +25,14 @@ const IndexPage = () => (
     <Styled.h2>1. See the Forest Paths</Styled.h2>
     <p>Nodes and edges are powerful for structuring information. Full graphs have interesting features. 
     </p>
-    <p>Graph theory was invented 
+    {/* <p>Graph theory was invented 
       to <Link href="https://en.wikipedia.org/wiki/Seven_Bridges_of_Königsberg">find a path</Link> yet
-      dwells on the pieces of the puzzle rather than the resulting picture.</p>
-    <p>Until graphs became databases, Paths didn't really need to be concrete. Thinking about graphs as
-      an information architecture . Graph theory provides language and thinking to discuss features of a 
-      graph. 
+      dwells on the pieces of the puzzle rather than the resulting picture.</p> */}
+    <p>Until graphs became databases, Paths didn't really need to be concrete. Mathematical graphs are
+      usually lightweight, maybe names on Nodes to give them identity and numbers on Edges to give them "weight".
+    </p><p>Thinking about graphs as an information architecture, as used in 
+      the <Link href="https://neo4j.com/developer/graph-database/">Property Graph Model</Link>, both Nodes and 
+      Edges are much richer data records. Missing is being able to say something about entire Paths. 
     </p>
 
     <Styled.h3>Path Information - Route 66</Styled.h3>
@@ -39,16 +41,6 @@ const IndexPage = () => (
     information about Route 66 itself go? 
     </p>
     <p>This is the canonical use case of a Path as information structure.</p>
-
-    <Styled.h3>Decorated Graphs - D3 DG</Styled.h3>
-    <p>D3.js has a lovely force-based network layout. Like many other libraries, the
-      algorithm annotates the graph with position data. Wouldn't it be nice to save
-      position and styling without compromising the domain data in the graph?
-    </p>
-    <p>Paths could achieve that by following an architectural pattern called an Entity-component-system (ECS),
-      a gift from the world of game development. Just wrap each Node (the entity) in a labeled Path (the system) to provide
-      system-specific information (the component).
-    </p>
 
     <Styled.h3>Shared Content</Styled.h3>
     <p>A delivery truck driver steers a truck which physically contains packages that are owned (though not yet possed)
@@ -61,6 +53,16 @@ const IndexPage = () => (
     <p>A document model can provide explicit containers for getting stuff in the truck, but optimizes for either 
       truck-oriented or owner oriented queries.</p>
     <p>A path model can do both explicitly in the data, without needing a schema or a written guidebook. </p>
+
+    <Styled.h3>Decorated Graphs - D3 DG</Styled.h3>
+    <p>D3.js has a lovely force-based network layout. Like many other libraries, the
+      algorithm annotates the graph with position data. Wouldn't it be nice to save
+      position and styling without compromising the domain data in the graph?
+    </p>
+    <p>Paths could achieve that by following an architectural pattern called an Entity-component-system (ECS),
+      a gift from the world of game development. Just wrap each Node (the entity) in a labeled Path (the system) to provide
+      system-specific information (the component).
+    </p>
 
     <Styled.h2>2. From nodes and edges, to paths</Styled.h2>
     <p>Gram structures data as property graph paths.

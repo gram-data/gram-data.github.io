@@ -27,7 +27,7 @@ const Header:React.FC<HeaderProps> = ({ siteTitle, siteDescription }) => (
     >
       <Heading>
         <Link
-          to="/"
+          href="/"
           sx={{
             textDecoration: `none`,
           }}
