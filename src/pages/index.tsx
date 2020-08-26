@@ -51,7 +51,7 @@ const IndexPage = () => (
       the driver by accident. 
     </p>
     <p>A document model can provide explicit containers for getting stuff in the truck, but optimizes for either 
-      truck-oriented or owner oriented queries.</p>
+      truck-oriented or owner-oriented queries.</p>
     <p>A path model can do both explicitly in the data, without needing a schema or a written guidebook. </p>
 
     <Styled.h3>Decorated Graphs - D3 DG</Styled.h3>

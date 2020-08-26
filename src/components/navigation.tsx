@@ -7,7 +7,6 @@ const Navigation = () => (
   <Fragment>
     <Link to="/"><Button>Home</Button></Link>
     <Link to="/math/"><Button>Path Math</Button></Link> 
-    <Link to="/sandbox/"><Button>Sandbox</Button></Link> 
     <Link to="/references/"><Button>References</Button></Link> 
   </Fragment>
 )
