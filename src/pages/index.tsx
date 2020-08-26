@@ -46,7 +46,7 @@ const IndexPage = () => (
       position and styling without compromising the domain data in the graph?
     </p>
     <p>Paths could achieve that by following an architectural pattern called an Entity-component-system (ECS),
-      a gift from the world of game development. Just wrap each Node (the entity) in a Path (the system) to provide
+      a gift from the world of game development. Just wrap each Node (the entity) in a labeled Path (the system) to provide
       system-specific information (the component).
     </p>
 
