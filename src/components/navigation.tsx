@@ -6,8 +6,8 @@ import { Text, Box, Button } from "theme-ui"
 const Navigation = () => (
   <Fragment>
     <Link to="/"><Button>Home</Button></Link>
-    <Link to="/evolution/"><Button>Getting Started</Button></Link> 
     <Link to="/math/"><Button>Path Math</Button></Link> 
+    <Link to="/railroad/"><Button>Railroad Diagram</Button></Link> 
     <Link to="/references/"><Button>References</Button></Link> 
   </Fragment>
 )

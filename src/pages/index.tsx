@@ -64,6 +64,20 @@ const IndexPage = () => (
       system-specific information (the component).
     </p>
 
+    <Styled.h3>Paths all the way down</Styled.h3>
+    <p>Nodes combine with Nodes to make Edges, which can be combined to make longer Paths.
+      A sequence of Paths combines everything into larger structures. Every Path combination, 
+      from a single Node to a globe-spanning superstructure with all the intermediary Paths,
+      are complete, valid Graphs. 
+    </p>
+    <p>So, what?</p>
+
+    <Styled.h4>Paths are forever</Styled.h4>
+    <p>Paths can model sub-graphs, so you can comfortably talk about this part of the </p>
+
+    <Styled.h4>Graph sections</Styled.h4>
+    <p>Paths can model sub-graphs, so you can comfortably talk about this part of the </p>
+
     <Styled.h2>2. From nodes and edges, to paths</Styled.h2>
     <p>Gram structures data as property graph paths.
     In practice, that means you can write a graph 
