@@ -17,11 +17,6 @@ const IndexPage = () => (
       <Styled.li>Be friendly for humans to write and machines to read</Styled.li>
     </Styled.ol>
 
-    <p>Principles:</p>
-    <Styled.ul>
-      <Styled.li>Be explicit about implicit relationships</Styled.li>
-    </Styled.ul>
-
     <Styled.h2>1. See the Forest Paths</Styled.h2>
     <p>Nodes and edges are powerful for structuring information. Full graphs have interesting features. 
     </p>

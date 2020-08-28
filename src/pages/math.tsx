@@ -70,7 +70,7 @@ const MathPage = () => (
     <Styled.h2>Path Notation</Styled.h2>
     <p>Gram uses two complementary notations for paths:</p>
     <ol>
-      <li>Cypher path: alternating nodes and edges</li>
+      <li>Cypher node patterns: alternating nodes and edges</li>
       <li>Path composition: two paths composed into a new path</li>
     </ol>
     <p>Both notations use the following relations:</p>
