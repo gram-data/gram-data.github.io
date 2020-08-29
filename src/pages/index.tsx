@@ -65,13 +65,6 @@ const IndexPage = () => (
       from a single Node to a globe-spanning superstructure with all the intermediary Paths,
       are complete, valid Graphs. 
     </p>
-    <p>So, what?</p>
-
-    <Styled.h4>Paths are forever</Styled.h4>
-    <p>Paths can model sub-graphs, so you can comfortably talk about this part of the </p>
-
-    <Styled.h4>Graph sections</Styled.h4>
-    <p>Paths can model sub-graphs, so you can comfortably talk about this part of the </p>
 
     <Styled.h2>2. From nodes and edges, to paths</Styled.h2>
     <p>Gram structures data as property graph paths.
