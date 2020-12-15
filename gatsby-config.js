@@ -1,11 +1,15 @@
+require("dotenv").config()
+
+const config = require("./config/site")
+
 module.exports = {
   siteMetadata: {
     title: `Gram Data`,
-    description: `Graphs from Paths`,
+    description: `Graphs for the rest of us`,
     author: `@akollegger`,
   },
   plugins: [
-    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -22,6 +26,14 @@ module.exports = {
           default: require.resolve("./src/components/layout.tsx"),
         },
       },
+    },
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        token: config.githubApiToken,
+        graphQLQuery: config.githubApiQuery,
+        variables: config.githubApiVariables,
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -41,7 +53,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/gram-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
