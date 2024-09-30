@@ -7,16 +7,15 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
     integrations: [starlight({
-        title: 'My Docs',
+        title: 'Gram',
         social: {
-            github: 'https://github.com/withastro/starlight',
+            github: 'https://github.com/gram-data',
         },
         sidebar: [
             {
                 label: 'Guides',
                 items: [
-                    // Each item here is one entry in the navigation menu.
-                    { label: 'Example Guide', slug: 'guides/example' },
+                    { label: 'Mapping to a Property Graph', slug: 'guides/mapping-to-a-property-graph' },
                 ],
             },
             {
